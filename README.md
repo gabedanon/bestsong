@@ -1,4 +1,4 @@
-bestsong
-========
+Best Song in the World
+======================
 
-The Best Song in the World Game
+It's the best song in the world, and I wrote it for you.
