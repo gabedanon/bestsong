@@ -1,0 +1,20 @@
+<tr>
+  <td><%= song.title %></td>
+  <td><%= song.artist %></td>
+  <td><%= song.album %></td>
+  <td><%= song.spotify_id %></td>
+  <td><a href="<%= song.preview_url %>">Preview</a></td>
+  <% votes_for = @votes.where(:for_id => song).count %>
+  <% votes_against = @votes.where(:against_id => song).count %>
+  <% total_votes = votes_for + votes_against %>
+  <td><%= votes_for %></td>
+  <td><%= votes_against %></td>
+  <td>
+  <% if total_votes == 0 %>
+	0%
+  <% else %>
+  	<%= ((votes_for.to_f / total_votes.to_f) * 100).to_i %>%
+  <% end %>
+  </td>
+  <td><%= link_to '<i class="fa fa-trash"></i><span class="sr-only">Delete</span>'.html_safe, song_path(song), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

@@ -1,0 +1,37 @@
+<h1 class="text-center">The Best Song in the World</h1>
+
+<div class="row">
+	<div class="col-xs-6 text-center">
+		<img src="<%= @song1.artwork_url %>" width="300"><br>
+		<audio src="<%= @song1.preview_url %>" controls></audio><br>
+		<% if @winner == '0' %>
+			<h3>You chose <strong><%= @song1.title %></strong> by <%= @song1.artist %><br></h3>
+			<h4>which wins</h4>
+			<h1><%= @percentage_1 %>%</h1>
+			<h4>of the time</h4>
+		<% elsif @winner == '1' %>
+			<h3>You didn't choose <strong><%= @song1.title %></strong> by <%= @song1.artist %><br></h3>
+			<h4>which wins</h4>
+			<h1><%= @percentage_1 %>%</h1>
+			<h5>of the time</h5>
+		<% end %>
+	</div>
+	<div class="col-xs-6 text-center">
+		<img src="<%= @song2.artwork_url %>" width="300"><br>
+		<audio src="<%= @song2.preview_url %>" controls></audio><br>
+		<% if @winner == '1' %>
+			<h3>You chose <strong><%= @song2.title %></strong> by <%= @song2.artist %><br></h3>
+			<h4>which wins</h4>
+			<h1><%= @percentage_2 %>%</h1>
+			<h4>of the time</h4>
+		<% elsif @winner == '0' %>
+			<h3>You didn't choose <strong><%= @song2.title %></strong> by <%= @song2.artist %><br></h3>
+			<h4>which wins</h4>
+			<h1><%= @percentage_2 %>%</h1>
+			<h4>of the time</h4>
+		<% end %>
+	</div>
+</div>
+<div class="row text-center">
+	<%= link_to "Play Again", root_path, class: 'btn btn-primary' %>
+</div>

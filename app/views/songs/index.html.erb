@@ -1,0 +1,28 @@
+<% flash.each do |key, value| %>
+	<div class="alert alert-<%= key %>"><%= value %></div>
+<% end %>	
+
+<h1>Songs</h1>
+
+<table class="table">
+  <tr>
+    <th>Title</th>
+    <th>Artist</th>
+    <th>Album</th>
+    <th>Spotify ID</th>
+    <th>Preview</th>
+    <th>+1</th>
+    <th>-1</th>
+    <th>Score</th>
+    <th>Delete</th>
+  </tr>
+ 
+  <%= render @songs %>
+</table>
+
+<h3>Autopopulate Songs</h3>
+<p>
+	<a href="/auto?by=gabe" class="btn btn-primary">Gabe's Picks</a>
+	<a href="/auto?by=most_streamed" class="btn btn-primary">Most Streamed</a>
+	<a href="/auto?by=most_viral" class="btn btn-primary">Most Viral</a>
+</p>

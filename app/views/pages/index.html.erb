@@ -1,0 +1,20 @@
+<h1 class="text-center">The Best Song in the World</h1>
+
+<div class="row">
+	<div class="col-xs-6 text-center">
+		<img src="<%= @song1.artwork_url %>" width="300"><br>
+		<strong><%= @song1.title %></strong><br>
+		<%= @song1.artist %><br>
+		<%= @song1.album %><br>
+		<audio src="<%= @song1.preview_url %>" controls></audio><br>
+		<%= link_to "This Song is Better", new_vote_path(:winner => 0, :song1 => @song1.id, :song2 => @song2.id), class: "btn btn-primary" %>
+	</div>
+	<div class="col-xs-6 text-center">
+		<img src="<%= @song2.artwork_url %>" width="300"><br>
+		<strong><%= @song2.title %></strong><br>
+		<%= @song2.artist %><br>
+		<%= @song2.album %><br>
+		<audio src="<%= @song2.preview_url %>" controls></audio><br>
+		<%= link_to "This Song is Better", new_vote_path(:winner => 1, :song1 => @song1.id, :song2 => @song2.id), class: "btn btn-primary" %>
+	</div>
+</div>

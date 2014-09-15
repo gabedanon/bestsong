@@ -1,0 +1,32 @@
+<div class="col-sm-6 col-sm-offset-3">
+	<% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+  	<% end %>
+	<h1 class="text-center">Register</h1>
+
+	<%= form_for(@user) do |f| %>
+	<%= render 'shared/error_messages' %>
+		<p>
+			<%= f.label :name, class: "control-label sr-only" %>
+			<%= f.text_field :name, class: "form-control", placeholder: "Name" %>
+		</p>
+
+		<p>
+			<%= f.label :email, class: "control-label sr-only"  %>
+			<%= f.text_field :email, class: "form-control", placeholder: "Email" %>
+		</p>
+		<p>
+			<%= f.label :password, class: "control-label sr-only" %>
+			<%= f.password_field :password, class: "form-control", placeholder: "New Password" %>
+		</p>
+		<p>
+			<%= f.label :password_confirmation, "Confirmation", class: "control-label sr-only" %>
+			<%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm Password" %>
+		</p>
+
+		<p class="text-center">
+			<%= f.submit "Register", class: "btn btn-primary" %>
+			<%-# <%= link_to "Sign In", login_path, class: "btn btn-default" -%>
+		</p>
+	<% end %>
+</div>
