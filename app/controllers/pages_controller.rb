@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+	before_action :signed_in_user, only: [:autopopulate]
 	def index
 		# Fetch all songs, reorder them randomly, then grab the first two.
 		@songs = Song.all.shuffle.first(2)

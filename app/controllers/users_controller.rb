@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	# before_action :signed_in_user
+	before_action :signed_in_user
 
 	def index
 		@users = User.paginate(page: params[:page])

@@ -1,5 +1,5 @@
 class SongsController < ApplicationController
-	before_action :signed_in_user
+	before_action :signed_in_user, only: [:index, :edit, :update, :destroy, :show]
 
 	def index
 		@songs = Song.all
