@@ -18,6 +18,7 @@
 @import "bootstrap"
 @import "font-awesome-sprockets"
 @import "font-awesome"
+@import url(http://fonts.googleapis.com/css?family=Roboto:900,400,700,500,300,100)
 
 @-webkit-keyframes pulse
 	0% 
@@ -39,6 +40,7 @@ html, body
 	min-height: 100%
 
 body
+	font-family: 'Roboto', sans-serif
 	background: #cccccc
 	background: -moz-linear-gradient(top,  #cccccc 0%, #666666 100%)
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cccccc), color-stop(100%,#666666))
@@ -62,7 +64,7 @@ body
 
 .songbox
 	margin: 0 auto 30px
-	max-width: 300px
+	width: 300px
 	position: relative
 	.songchart
 		position: absolute
@@ -113,8 +115,9 @@ body
 		width: 300px
 		font-size: 24px
 		text-transform: uppercase
-		font-weight: 200
+		font-weight: 400
 		margin-bottom: 10px
+		border-radius: 12px
 		&:hover
 			border-color: red
 			color: yellow
@@ -130,6 +133,47 @@ body
 				border: 3px solid red
 				border-radius: 12px
 				padding: 30px 0
+
+.outlinebox
+	width: 340px
+	margin: auto
+	padding: 20px
+	border: 3px solid
+	border-radius: 12px
+	h3
+		font-size: 50px
+		font-weight: 900
+		text-transform: uppercase
+		margin: -16px 0 0
+		letter-spacing: 20px
+	&.winnerbox
+		border-color: green
+		color: green
+	&.loserbox
+		border-color: red
+		color: red
+		h3
+			font-weight: 100
+			letter-spacing: 36px
+
+.score
+	display: block
+	margin: 10px 0 30px
+	.score-title
+		font-size: 18px
+		text-transform: uppercase
+		border-bottom: 1px solid
+		display: inline-block
+		margin: 6px
+	.score-number
+		font-size: 80px
+		line-height: 70px
+		font-weight: 100
+		vertical-align: middle
+	.score-pct		
+		font-size: 40px
+		vertical-align: middle
+		font-weight: 100
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: $screen-sm-min)

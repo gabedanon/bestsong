@@ -8,32 +8,50 @@
 			<div class="box-outer-2">
 				<div class="box-outer clearfix">
 					<div class="col-xs-6 text-center">
-						<div class="songbox">
-							<img src="<%= @song1.artwork_url %>" width="300">
-							<audio src="<%= @song1.preview_url %>" class="song"></audio>
-							<div class="songchart"><%= pie_chart [["For", @votes_for_1], ["Against", @votes_against_1]], colors: ["white", "black"], library: {fontSize: 0, backgroundColor: 'black', legend: {position: 'none'}} %></div>
-						</div>
 						<% if @winner == '0' %>
-							<h3 class="winnertext">Winner</h3>
+							<div class="winnerbox outlinebox">
 						<% elsif @winner == '1' %>
-							<h3 class="losertext">Loser</h3>
+							<div class="loserbox outlinebox">
 						<% end %>
-							<span class="song-title"><%= @song1.title %></span><br>
-							<span class="song-artist"><%= @song1.artist %></span><br>
+							<div class="songbox">
+								<img src="<%= @song1.artwork_url %>" width="300">
+								<audio src="<%= @song1.preview_url %>" class="song"></audio>
+								<div class="songchart"><%= pie_chart [["For", @votes_for_1], ["Against", @votes_against_1]], colors: ["white", "black"], library: {fontSize: 0, backgroundColor: 'black', legend: {position: 'none'}} %></div>
+							</div>
+							<% if @winner == '0' %>
+								<h3>Winner</h3>
+							<% elsif @winner == '1' %>
+								<h3>Loser</h3>
+							<% end %>
+							</div>
+							<span class="score">
+								<span class="song-artist"><%= @song1.artist %> - <%= @song1.title %></span><br>
+								<span class="score-title">Score</span><br>
+								<span class="score-number"><%= @percentage_1 %></span><span class="score-pct">%</span>
+							</span>
 					</div>
 					<div class="col-xs-6 text-center">
-						<div class="songbox">
-							<img src="<%= @song2.artwork_url %>" width="300">
-							<audio src="<%= @song2.preview_url %>" class="song"></audio>
-							<div class="songchart"><%= pie_chart [["For", @votes_for_2], ["Against", @votes_against_2]], colors: ["white", "black"], library: {fontSize: 0, backgroundColor: 'black', legend: {position: 'none'}} %></div>
-						</div>
-						<% if @winner == '1' %>
-							<h3 class="winnertext">Winner</h3>
-						<% elsif @winner == '0' %>
-							<h3 class="losertext">Loser</h3>
+						<% if @winner == '0' %>
+							<div class="loserbox outlinebox">
+						<% elsif @winner == '1' %>
+							<div class="winnerbox outlinebox">
 						<% end %>
-							<span class="song-title"><%= @song2.title %></span><br>
-							<span class="song-artist"><%= @song2.artist %></span><br>
+							<div class="songbox">
+								<img src="<%= @song2.artwork_url %>" width="300">
+								<audio src="<%= @song2.preview_url %>" class="song"></audio>
+								<div class="songchart"><%= pie_chart [["For", @votes_for_2], ["Against", @votes_against_2]], colors: ["white", "black"], library: {fontSize: 0, backgroundColor: 'black', legend: {position: 'none'}} %></div>
+							</div>
+							<% if @winner == '1' %>
+								<h3>Winner</h3>
+							<% elsif @winner == '0' %>
+								<h3>Loser</h3>
+							<% end %>
+							</div>
+							<span class="score">
+								<span class="song-artist"><%= @song2.artist %> - <%= @song2.title %></span><br>
+								<span class="score-title">Score</span><br>
+								<span class="score-number"><%= @percentage_2 %></span><span class="score-pct">%</span>
+							</span>
 					</div>
 					<div class="col-xs-12 text-center">
 						<%= link_to "Play Again", root_path, class: 'btn btn-primary' %>
