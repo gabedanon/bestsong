@@ -11,13 +11,18 @@ ready = ->
     if $(this).hasClass("playing")
       song.trigger "pause"
       $(this).removeClass "playing"
+      $(".record-label").addClass "paused"
     else
       $(this).addClass "playing"
+      $(".record-label").addClass "fa-spin"
+      $(".record-label").removeClass "paused"
       song.trigger "play"
       othersong.trigger "pause"
       $(othersong).closest('.songbox').removeClass "playing"
     $(song).on "ended", ->
       $(song).closest(".songbox").removeClass "playing"
+      $(".record-label").addClass "paused"
+      
       return
 
     return

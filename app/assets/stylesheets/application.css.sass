@@ -34,11 +34,27 @@
 		transform: scale(1.05)
 	100% 
 		transform: scale(1)
+
+html, body
+	min-height: 100%
+
+body
+	background: #cccccc
+	background: -moz-linear-gradient(top,  #cccccc 0%, #666666 100%)
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cccccc), color-stop(100%,#666666))
+	background: -webkit-linear-gradient(top,  #cccccc 0%,#666666 100%)
+	background: -o-linear-gradient(top,  #cccccc 0%,#666666 100%)
+	background: -ms-linear-gradient(top,  #cccccc 0%,#666666 100%)
+	background: linear-gradient(to bottom,  #cccccc 0%,#666666 100%)
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', endColorstr='#666666',GradientType=0 )
+
+
+
 .playing
 	-webkit-animation-name: pulse
 	animation-name: pulse
-	-webkit-animation-duration: 0.5s
-	animation-duration: 0.5s
+	-webkit-animation-duration: 1s
+	animation-duration: 1s
 	-webkit-animation-fill-mode: both
 	animation-fill-mode: both
 	animation-iteration-count: infinite
@@ -53,3 +69,81 @@
 		top: 0
 		opacity: 0.7
 		width: 100%
+
+.record-header
+	height: 720px
+	background-image: image-url("record.svg")
+	background-repeat: no-repeat
+	background-size: cover
+	background-position: 0 -220px
+	position: relative
+	max-width: 940px
+	margin: 0 auto
+	.record-label
+		position: absolute
+		top: 6px
+		left: 226px
+		transition-duration: 0.2s
+		transition-property:transform
+	.paused
+		-webkit-animation-play-state: paused
+		animation-play-state: paused
+
+.box-outer-4
+	background-color: #1e1e53
+	width: 1000px
+	position: relative
+	margin: -458px auto 0
+	padding: 10px
+	color: white
+	h1
+		margin: 0 0 30px
+		letter-spacing: 2px
+		font-weight: 100
+	.song-title
+		font-size: 24px
+		font-weight: 100
+		letter-spacing: 1px
+	.song-artist
+		font-size: 19px
+		font-weight: 100
+		letter-spacing: 1px
+	.song-album
+		font-weight: 100
+		font-style: italic
+		font-size: 12px
+		letter-spacing: 1px
+	.btn-primary
+		background-color: transparent
+		border: 3px solid green
+		color: white
+		width: 300px
+		font-size: 24px
+		text-transform: uppercase
+		font-weight: 100
+		letter-spacing: 1px
+		margin-bottom: 10px
+		&:hover
+			border-color: red
+			color: yellow
+	.box-outer-3
+		padding: 10px
+		border-radius: 12px
+		border: 3px solid green
+		.box-outer-2
+			border: 3px solid yellow
+			border-radius: 12px 12px 0 0
+			padding: 10px
+			.box-outer
+				border: 3px solid red
+				border-radius: 12px
+				padding: 30px 0
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm-min)
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min)
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: $screen-lg-min)	

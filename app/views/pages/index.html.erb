@@ -1,26 +1,34 @@
-<h1 class="text-center" style="margin: 20px 0 40px;"><i class="fa fa-music"></i> The Best Song in the World <i class="fa fa-globe"></i></h1>
-<div class="row">
-	<div class="col-xs-6 text-center">
-		<div class="songbox">
-			<img src="<%= @song1.artwork_url %>" width="300" class="song-image">
-			<audio src="<%= @song1.preview_url %>" class="song"></audio><br>
-			<strong><%= @song1.title %></strong><br>
-			<%= @song1.artist %><br>
-			<%= @song1.album %><br>
-		</div>
-		<%= link_to "This Song is Better", new_vote_path(:winner => 0, :song1 => @song1.id, :song2 => @song2.id), class: "btn btn-lg btn-primary" %>
-	</div>
-	<div class="col-xs-6 text-center">
-		<div class="songbox">
-			<img src="<%= @song2.artwork_url %>" width="300" class="song-image">
-			<audio src="<%= @song2.preview_url %>" class="song"></audio><br>
-			<strong><%= @song2.title %></strong><br>
-			<%= @song2.artist %><br>
-			<%= @song2.album %><br>
-		</div>
-		<%= link_to "This Song is Better", new_vote_path(:winner => 1, :song1 => @song1.id, :song2 => @song2.id), class: "btn btn-lg btn-primary" %>
-	</div>
+<div class="record-header">
+	<h1 class="sr-only">Best Song in the World</h1>
+	<%= image_tag "label.svg", width: 469, height: 469, class: "record-label" %>
 </div>
-<div class="row text-center" style="margin-top: 90px;">
-	<%= link_to "Add a Song", new_song_path, class: 'btn btn-primary' %>
+<div class="row">
+	<div class="box-outer-4">
+		<div class="box-outer-3">
+			<div class="box-outer-2">
+				<div class="box-outer clearfix">
+					<div class="col-xs-6 text-center">
+						<div class="songbox">
+							<img src="<%= @song1.artwork_url %>" width="300" class="song-image">
+							<audio src="<%= @song1.preview_url %>" class="song"></audio><br>
+							<span class="song-title"><%= @song1.title %></span><br>
+							<span class="song-artist"><%= @song1.artist %></span><br>
+							<span class="song-album"><%= @song1.album %></span><br>
+						</div>
+						<%= link_to "This Song is Better", new_vote_path(:winner => 0, :song1 => @song1.id, :song2 => @song2.id), class: "btn btn-lg btn-primary" %>						
+					</div>
+					<div class="col-xs-6 text-center">
+						<div class="songbox">
+							<img src="<%= @song2.artwork_url %>" width="300" class="song-image">
+							<audio src="<%= @song2.preview_url %>" class="song"></audio><br>
+							<span class="song-title"><%= @song2.title %></span><br>
+							<span class="song-artist"><%= @song2.artist %></span><br>
+							<span class="song-album"><%= @song2.album %></span><br>
+						</div>
+						<%= link_to "This Song is Better", new_vote_path(:winner => 1, :song1 => @song1.id, :song2 => @song2.id), class: "btn btn-lg btn-primary" %>						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
