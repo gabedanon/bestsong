@@ -1,6 +1,6 @@
 <div class="record-header">
 	<h1 class="sr-only">Best Song in the World</h1>
-	<%= image_tag "label.svg", width: 469, height: 469, class: "record-label" %>
+	<%= image_tag "label.svg", width: 469, height: 469, class: "record-label paused" %>
 </div>
 <div class="row">
 	<div class="box-outer-4">
@@ -13,7 +13,6 @@
 							<audio src="<%= @song1.preview_url %>" class="song"></audio><br>
 							<span class="song-title"><%= @song1.title %></span><br>
 							<span class="song-artist"><%= @song1.artist %></span><br>
-							<span class="song-album"><%= @song1.album %></span><br>
 						</div>
 						<%= link_to "This Song is Better", new_vote_path(:winner => 0, :song1 => @song1.id, :song2 => @song2.id), class: "btn btn-lg btn-primary" %>						
 					</div>
@@ -23,7 +22,6 @@
 							<audio src="<%= @song2.preview_url %>" class="song"></audio><br>
 							<span class="song-title"><%= @song2.title %></span><br>
 							<span class="song-artist"><%= @song2.artist %></span><br>
-							<span class="song-album"><%= @song2.album %></span><br>
 						</div>
 						<%= link_to "This Song is Better", new_vote_path(:winner => 1, :song1 => @song1.id, :song2 => @song2.id), class: "btn btn-lg btn-primary" %>						
 					</div>
@@ -32,3 +30,4 @@
 		</div>
 	</div>
 </div>
+<%= audio_tag("BESTSONGINTRO.mp3", id: "themesong") %>

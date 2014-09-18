@@ -2,12 +2,24 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 ready = ->
+  $(".record-label").on "click", ->
+    if $(this).hasClass("paused")
+      $("#themesong").trigger "play"
+      $(this).addClass "fa-spin"
+      $(this).removeClass "paused"
+    else
+      $("#themesong").trigger "pause"
+      $(".song").trigger "pause"
+      $(".songbox").removeClass "playing"
+      $(this).addClass "paused"
+    $("#themesong").on "ended", ->
+    	$(".record-label").addClass "paused"
 
+    return
   $(".songbox").on "click", ->
-    othersong = undefined
-    song = undefined
     song = $(this).find(".song")
     othersong = $(".song").not(song)
+    themesong = $("#themesong")
     if $(this).hasClass("playing")
       song.trigger "pause"
       $(this).removeClass "playing"
@@ -18,6 +30,7 @@ ready = ->
       $(".record-label").removeClass "paused"
       song.trigger "play"
       othersong.trigger "pause"
+      themesong.trigger "pause"
       $(othersong).closest('.songbox').removeClass "playing"
     $(song).on "ended", ->
       $(song).closest(".songbox").removeClass "playing"

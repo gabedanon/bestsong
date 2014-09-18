@@ -11,5 +11,7 @@ Rails.application.routes.draw do
   match '/auto', to: 'pages#autopopulate', via: 'get'
   match '/vote', to: 'votes#new', via: 'get'
   match '/results', to: 'pages#results', via: 'get'
+  match '/add_votes', to: 'pages#add_votes', via: 'get'
+  post "/playlist" => "pages#playlist"
 
 end

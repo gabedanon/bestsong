@@ -23,3 +23,14 @@
 	<%= f.submit 'Submit', {class: 'btn btn-primary'} %>
 	</p>
 <% end %>
+
+<h1>Add Playlist</h1>
+
+<form action="/playlist" method="post">
+	<p>
+		<input type="text" class="form-control" name="playlist" placeholder="Add a Spotify Playlist URL">
+	</p>
+	<p>
+		<input type="submit" class="btn btn-primary" value="Submit">
+	</p>
+</form>
