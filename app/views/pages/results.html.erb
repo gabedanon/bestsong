@@ -14,7 +14,9 @@
 							<div class="loserbox outlinebox">
 						<% end %>
 							<div class="songbox">
-								<img src="<%= @song1.artwork_url %>" width="300">
+								<div class="songbox-image">
+									<img src="<%= @song1.artwork_url %>" width="300">
+								</div>
 								<audio src="<%= @song1.preview_url %>" class="song"></audio>
 								<div class="songchart"><%= pie_chart [["For", @votes_for_1], ["Against", @votes_against_1]], colors: ["white", "black"], library: {fontSize: 0, backgroundColor: 'black', legend: {position: 'none'}} %></div>
 							</div>
@@ -37,7 +39,9 @@
 							<div class="winnerbox outlinebox">
 						<% end %>
 							<div class="songbox">
-								<img src="<%= @song2.artwork_url %>" width="300">
+								<div class="songbox-image">
+									<img src="<%= @song2.artwork_url %>" width="300">
+								</div>
 								<audio src="<%= @song2.preview_url %>" class="song"></audio>
 								<div class="songchart"><%= pie_chart [["For", @votes_for_2], ["Against", @votes_against_2]], colors: ["white", "black"], library: {fontSize: 0, backgroundColor: 'black', legend: {position: 'none'}} %></div>
 							</div>

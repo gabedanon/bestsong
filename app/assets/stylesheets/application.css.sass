@@ -66,11 +66,16 @@ body
 	margin: 0 auto 30px
 	width: 300px
 	position: relative
+	.songbox-image
+		height: 300px
+		line-height: 300px
+		overflow: hidden
+		font-size: 0
 	.songchart
 		position: absolute
 		top: 0
 		opacity: 0.7
-		width: 100%
+		width: 100%		
 
 .record-header
 	height: 720px
@@ -91,8 +96,8 @@ body
 		-webkit-animation-play-state: paused
 		animation-play-state: paused	
 
-.box-outer-4
-	background-color: #1e1e53
+.box-outer-3
+	background-color: #080831
 	width: 1000px
 	position: relative
 	margin: -458px auto 0
@@ -110,7 +115,7 @@ body
 		font-size: 12px
 	.btn-primary
 		background-color: transparent
-		border: 3px solid green
+		border: 3px solid #afcde4
 		color: white
 		width: 300px
 		font-size: 24px
@@ -119,20 +124,17 @@ body
 		margin-bottom: 10px
 		border-radius: 12px
 		&:hover
-			border-color: red
-			color: yellow
-	.box-outer-3
-		padding: 10px
+			border-color: #080831
+			background-color: #afcde4
+			color: #080831
+	.box-outer-2
+		border: 3px solid #afcde4
 		border-radius: 12px
-		border: 3px solid green
-		.box-outer-2
-			border: 3px solid yellow
+		padding: 10px
+		.box-outer
+			border: 3px solid white
 			border-radius: 12px
-			padding: 10px
-			.box-outer
-				border: 3px solid red
-				border-radius: 12px
-				padding: 30px 0
+			padding: 60px 0
 
 .outlinebox
 	width: 340px
@@ -147,11 +149,11 @@ body
 		margin: -16px 0 0
 		letter-spacing: 20px
 	&.winnerbox
-		border-color: green
-		color: green
+		border-color: #afcde4
+		color: #afcde4
 	&.loserbox
-		border-color: red
-		color: red
+		border-color: #ccc
+		color: #ccc
 		h3
 			font-weight: 100
 			letter-spacing: 36px
@@ -174,6 +176,10 @@ body
 		font-size: 40px
 		vertical-align: middle
 		font-weight: 100
+
+a.newsong
+	position: absolute
+	right: 0		
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: $screen-sm-min)
